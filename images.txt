@@ -1,5 +1,15 @@
 #支持私库
-k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.0.0
-xhofe/alist:latest
+#k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.0.0
+#xhofe/alist:latest
 #支持指定架构
---platform=linux/arm64 xiaoyaliu/alist
+#--platform=linux/arm64 xiaoyaliu/alist
+
+ghcr.io/home-assistant/home-assistant:latest
+jc21/nginx-proxy-manager:latest
+nodered/node-red:latest
+ghcr.io/koenkk/zigbee2mqtt:latest
+linuxserver/heimdall:latest
+jeessy/ddns-go:latest
+ghcr.io/esphome/esphome:latest 
+ghcr.io/home-assistant/qemuarm-64-homeassistant:latest
+emqx/emqx:latest
