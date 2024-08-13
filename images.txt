@@ -12,6 +12,8 @@ linuxserver/heimdall:latest
 jeessy/ddns-go:latest
 ghcr.io/esphome/esphome:latest 
 ghcr.io/home-assistant/qemuarm-64-homeassistant:latest
+ghcr.io/home-assistant/qemuarm-64-homeassistant:stable
+ghcr.io/home-assistant/home-assistant:stable
 emqx/emqx:latest
 zabbix/zabbix-server-mysql:latest
 zabbix/zabbix-web-nginx-mysql:latest
