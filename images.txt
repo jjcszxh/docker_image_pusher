@@ -25,3 +25,4 @@ zabbix/zabbix-agent2:latest
 --platform=linux/arm64 ghcr.io/koenkk/zigbee2mqtt:latest
 ghcr.io/ryanh7/frigate:master-cda942b-tensorrt
 #ghcr.io/brenner-tobias/cloudflared/amd64:latest
+docker pull ghcr.io/blakeblackshear/frigate:master-90221e8-tensorrt
