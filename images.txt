@@ -24,7 +24,6 @@ zabbix/zabbix-agent2:latest
 --platform=linux/arm64 ghcr.io/koenkk/zigbee2mqtt:latest
 ghcr.io/ryanh7/frigate:master-cda942b-tensorrt
 ghcr.io/blakeblackshear/frigate:stable-tensorrt
-ghcr.io/blakeblackshear/frigate:latest-tensorrt
 ghcr.io/wg-easy/wg-easy:latest
 grafana/grafana:latest
 #portainer/portainer-ce:latest
