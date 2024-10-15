@@ -26,4 +26,5 @@ ghcr.io/ryanh7/frigate:master-cda942b-tensorrt
 ghcr.io/blakeblackshear/frigate:stable-tensorrt
 ghcr.io/wg-easy/wg-easy:latest
 grafana/grafana:latest
+ghcr.io/vdsm/virtual-dsm:7.20
 #portainer/portainer-ce:latest
