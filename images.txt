@@ -27,5 +27,5 @@ ghcr.io/blakeblackshear/frigate:stable-tensorrt
 ghcr.io/wg-easy/wg-easy:latest
 grafana/grafana:latest
 ghcr.io/vdsm/virtual-dsm:7.20
---platform=linux/arm6 traccar/traccar:latest
+--platform=linux/arm64 traccar/traccar:latest
 #portainer/portainer-ce:latest
