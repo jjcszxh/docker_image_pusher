@@ -28,4 +28,6 @@ ghcr.io/wg-easy/wg-easy:latest
 grafana/grafana:latest
 ghcr.io/vdsm/virtual-dsm:7.20
 --platform=linux/arm64 traccar/traccar:latest
-#portainer/portainer-ce:latest
+--platform=linux/amd64 traccar/traccar:latest
+--platform=linux/amd64 portainer/portainer-ce:latest
+--platform=linux/arm64 portainer/portainer-ce:latest
