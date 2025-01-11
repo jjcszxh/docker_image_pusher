@@ -1,2 +1,0 @@
-
-ghcr.io/ryanh7/frigate:master-cda942b-tensorrt
