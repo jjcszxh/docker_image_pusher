@@ -1,1 +1,1 @@
-ghcr.io/jjcszxh/frigate:c428715-tensorrt
+ghcr.io/blakeblackshear/frigate:b265b6b-tensorrt
