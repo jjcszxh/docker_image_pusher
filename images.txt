@@ -1,3 +1,4 @@
+ghcr.io/jjcszxh/ddddocr-fastapi:latest
 ghcr.io/home-assistant/qemuarm-64-homeassistant:latest
 ghcr.io/home-assistant/qemuarm-64-homeassistant:stable
 ghcr.io/home-assistant/home-assistant:stable
