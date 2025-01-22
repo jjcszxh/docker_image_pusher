@@ -3,8 +3,9 @@ name: Docker
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
-
+    branches: [ rge_capacity_mirror ]
+  schedule:
+    - cron: '00 23 * * *'
 
 env:
   ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
