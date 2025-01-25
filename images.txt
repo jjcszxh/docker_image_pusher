@@ -1,1 +1,4 @@
 ghcr.io/blakeblackshear/frigate:b265b6b-tensorrt
+ghcr.io/ryanh7/frigate:master-cda942b-tensorrt
+ghcr.io/blakeblackshear/frigate:stable-tensorrt
+ghcr.io/blakeblackshear/frigate:0.14.1-tensorrt
