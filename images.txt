@@ -12,3 +12,4 @@ linuxserver/heimdall:latest
 nodered/node-red:latest
 --platform=linux/amd64 portainer/portainer-ce:latest
 --platform=linux/arm64 portainer/portainer-ce:latest
+ghcr.io/jjcszxh/macless-haystack-cn:latest
