@@ -14,5 +14,5 @@ nodered/node-red:latest
 --platform=linux/arm64 portainer/portainer-ce:latest
 #自定义镜像
 ghcr.io/jjcszxh/macless-haystack-cn:latest
-ghcr.io/mrtian2016/hass-panel:latest
+#ghcr.io/mrtian2016/hass-panel:latest
 ghcr.io/jjcszxh/nginx-proxy-manager:latest
