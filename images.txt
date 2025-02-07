@@ -13,6 +13,7 @@ nodered/node-red:latest
 --platform=linux/amd64 portainer/portainer-ce:latest
 --platform=linux/arm64 portainer/portainer-ce:latest
 prom/prometheus
+google/cadvisor:latest
 #自定义镜像
 ghcr.io/jjcszxh/macless-haystack-cn:latest
 #ghcr.io/mrtian2016/hass-panel:latest
