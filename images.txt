@@ -16,5 +16,6 @@ prom/prometheus
 google/cadvisor:latest
 #自定义镜像
 ghcr.io/jjcszxh/macless-haystack-cn:latest
+gdy666/lucky:latest
 #ghcr.io/mrtian2016/hass-panel:latest
 
