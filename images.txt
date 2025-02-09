@@ -33,7 +33,7 @@ prom/prometheus:latest
 --platform=linux/arm64 prom/prometheus:latest
 
 google/cadvisor:latest
---platform=linux/arm64 google/cadvisor:latest
+#--platform=linux/arm64 google/cadvisor:latest
 
 gdy666/lucky:latest
 
