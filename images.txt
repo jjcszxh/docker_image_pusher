@@ -35,7 +35,6 @@ prom/prometheus:latest
 google/cadvisor:latest
 --platform=linux/arm64 google/cadvisor:latest
 
---platform=linux/arm64 gdy666/lucky:latest
 gdy666/lucky:latest
 
 gdy666/lu #错误镜像测试
