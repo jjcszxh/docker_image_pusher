@@ -38,7 +38,7 @@ google/cadvisor:latest
 --platform=linux/arm64 gdy666/lucky:latest
 gdy666/lucky:latest
 
-
+gdy666/lu #错误镜像测试
 
 jc21/nginx-proxy-manager:latest
 linuxserver/heimdall:latest
