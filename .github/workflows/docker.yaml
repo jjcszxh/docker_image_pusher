@@ -3,7 +3,7 @@ name: Docker
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [dev]
 
 env:
   ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"  # 个人命名空间仓库地址
@@ -26,7 +26,7 @@ jobs:
         echo "Before freeing up disk space"
         echo "=============================================================================="
         df -hT
-        echo "=============================================================================="
+        echo "==============================================================================" 
 
     - name: Maximize build space
       uses: easimon/maximize-build-space@master
@@ -45,7 +45,7 @@ jobs:
         echo "Free up disk space complete"
         echo "=============================================================================="
         df -hT
-        echo "=============================================================================="
+        echo "==============================================================================" 
 
     - name: Checkout Code
       uses: actions/checkout@v4
@@ -60,79 +60,46 @@ jobs:
 
     - name: Process and Push Images
       run: |
-        # 数据预处理, 判断镜像是否重名
-        declare -A duplicate_images
-        declare -A temp_map
-
         while IFS= read -r line || [ -n "$line" ]; do
-            [[ -z "$line" ]] && continue
-            if echo "$line" | grep -q '^\s*#'; then continue; fi
-            
-            image=$(echo "$line" | awk '{print $NF}')
-            image="${image%%@*}"  # 去掉@sha256等字符
-            image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
-            name_space=$(echo "$image" | awk -F'/' '{if (NF==3) print $2; else if (NF==2) print $1; else print ""}')
-            image_name=$(echo "$image_name_tag" | awk -F':' '{print $1}')
-            
-            name_space="${name_space}_"
-            
-            # 如果镜像名已存在，则标记为重复
-            if [[ -n "${temp_map[$image_name]}" ]]; then
-                if [[ "${temp_map[$image_name]}" != $name_space  ]]; then
-                    duplicate_images[$image_name]="true"
-                fi
-            else
-                temp_map[$image_name]=$name_space
-            fi       
-        done < images.txt
-
-        # 推送镜像到阿里云不同命名空间
-        while IFS= read -r line || [ -n "$line" ]; do
+            # 忽略空行与注释
             [[ -z "$line" ]] && continue
             if echo "$line" | grep -q '^\s*#'; then continue; fi
 
             echo "docker pull $line"
             docker pull $line
 
+            # 获取平台信息
             platform=$(echo "$line" | awk -F'--platform[ =]' '{if (NF>1) print $2}' | awk '{print $1}')
             platform_prefix=""
             if [ -n "$platform" ]; then
                 platform_prefix="${platform//\//_}_"
             fi
 
+            # 获取镜像的完整名称，例如kasmweb/nginx:1.25.3（命名空间/镜像名:版本号）
             image=$(echo "$line" | awk '{print $NF}')
             image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
-            name_space=$(echo "$image" | awk -F'/' '{if (NF==3) print $2; else if (NF==2) print $1; else print ""}')
-            image_name=$(echo "$image_name_tag" | awk -F':' '{print $1}')
-        
-            name_space_prefix=""
-            if [[ -n "${duplicate_images[$image_name]}" ]]; then
-                if [[ -n "${name_space}" ]]; then
-                    name_space_prefix="${name_space}_"
-                fi
-            fi
+            image_name_tag="${image_name_tag%%@*}"  # 去掉@sha256等字符
+            
+            # 推送到个人命名空间
+            new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$image_name_tag"
+            echo "docker tag $image $new_image"
+            docker tag $image $new_image
+            echo "docker push $new_image"
+            docker push $new_image
 
-            image_name_tag="${image_name_tag%%@*}"
+            # 推送到公共命名空间
+            new_image_public="$ALIYUN_REGISTRY_CRPI/$ALIYUN_NAME_SPACE_PUBLIC/$platform_prefix$image_name_tag"
+            echo "docker tag $image $new_image_public"
+            docker tag $image $new_image_public
+            echo "docker push $new_image_public"
+            docker push $new_image_public
 
-            # 判断镜像的命名空间推送到不同的仓库
-            if [[ "$name_space" == "$ALIYUN_NAME_SPACE_PUBLIC" ]]; then
-                new_image="$ALIYUN_REGISTRY_CRPI/$name_space/$platform_prefix$name_space_prefix$image_name_tag"
-                echo "docker tag $image $new_image"
-                docker tag $image $new_image
-                echo "docker push $new_image"
-                docker push $new_image
-            else
-                new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$name_space_prefix$image_name_tag"
-                echo "docker tag $image $new_image"
-                docker tag $image $new_image
-                echo "docker push $new_image"
-                docker push $new_image
-            fi
-
+            # 清理镜像
             echo "开始清理磁盘空间"
             df -hT
             docker rmi $image
             docker rmi $new_image
+            docker rmi $new_image_public
             echo "磁盘空间清理完毕"
             df -hT
         done < images.txt
