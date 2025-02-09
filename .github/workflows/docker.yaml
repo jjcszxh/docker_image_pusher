@@ -100,7 +100,7 @@ jobs:
             # 使用docker pull获取镜像，检查镜像是否存在
             docker pull $line
             if [ $? -ne 0 ]; then
-                echo "镜像 $line 下载失败，跳过"
+                echo "镜像 $line 下载失败，跳过"  # 如果下载失败，输出日志并跳过该镜像
                 continue  # 如果下载失败，跳过当前镜像
             fi
 
