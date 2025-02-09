@@ -24,9 +24,7 @@ jobs:
     - name: Before freeing up disk space
       run: |
         echo "Before freeing up disk space"
-        echo "=============================================================================="
         df -hT
-        echo "==============================================================================" 
 
     - name: Maximize build space
       uses: easimon/maximize-build-space@master
@@ -43,9 +41,7 @@ jobs:
     - name: Free up disk space complete
       run: |
         echo "Free up disk space complete"
-        echo "=============================================================================="
         df -hT
-        echo "==============================================================================" 
 
     - name: Checkout Code
       uses: actions/checkout@v4
@@ -60,17 +56,15 @@ jobs:
 
     - name: Process and Push Images
       run: |
-        # 数据预处理，判断镜像是否存在
         declare -A duplicate_images
         declare -A temp_map
 
-        # 遍历 images.txt 文件中的每一行
+        # 读取 images.txt 文件中的每一行
         while IFS= read -r line || [ -n "$line" ]; do
-            # 忽略空行与注释
             [[ -z "$line" ]] && continue
             if echo "$line" | grep -q '^\s*#'; then continue; fi
             
-            # 获取镜像的完整名称，去掉 @sha256 等字符
+            # 获取镜像完整名称
             image=$(echo "$line" | awk '{print $NF}')
             image="${image%%@*}"
             image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
@@ -79,9 +73,9 @@ jobs:
             
             name_space="${name_space}_"
             
-            # 如果镜像名已存在，则标记为重复
+            # 判断是否重复镜像
             if [[ -n "${temp_map[$image_name]}" ]]; then
-                if [[ "${temp_map[$image_name]}" != $name_space  ]]; then
+                if [[ "${temp_map[$image_name]}" != $name_space ]]; then
                     duplicate_images[$image_name]="true"
                 fi
             else
@@ -89,19 +83,16 @@ jobs:
             fi       
         done < images.txt
 
-        # 推送镜像到阿里云不同命名空间
+        # 处理镜像并推送
         while IFS= read -r line || [ -n "$line" ]; do
-            # 忽略空行与注释
             [[ -z "$line" ]] && continue
             if echo "$line" | grep -q '^\s*#'; then continue; fi
 
             echo "docker pull $line"
-            
-            # 使用docker pull获取镜像，检查镜像是否存在
             docker pull $line
             if [ $? -ne 0 ]; then
-                echo "镜像 $line 下载失败，跳过"  # 如果下载失败，输出日志并跳过该镜像
-                continue  # 如果下载失败，跳过当前镜像
+                echo "镜像 $line 下载失败，跳过"
+                continue
             fi
 
             # 获取平台信息
@@ -111,11 +102,18 @@ jobs:
                 platform_prefix="${platform//\//_}_"
             fi
 
-            # 获取镜像的完整名称，例如kasmweb/nginx:1.25.3（命名空间/镜像名:版本号）
+            # 获取镜像的完整名称
             image=$(echo "$line" | awk '{print $NF}')
             image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
-            image_name_tag="${image_name_tag%%@*}"  # 去掉@sha256等字符
-            
+            image_name_tag="${image_name_tag%%@*}"  # 去掉 @sha256 等部分
+
+            # 检查镜像平台与目标平台是否匹配
+            image_platform=$(docker inspect --format '{{.Os}}/{{.Architecture}}' $image)
+            if [ "$platform" != "" ] && [ "$image_platform" != "$platform" ]; then
+                echo "镜像 $image 不匹配指定平台 $platform，跳过此镜像"
+                continue
+            fi
+
             # 推送到个人命名空间
             new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$image_name_tag"
             echo "docker tag $image $new_image"
