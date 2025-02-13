@@ -38,3 +38,4 @@ ghcr.io/esphome/esphome:latest
 dadoum/anisette-v3-server
 ghcr.io/jjcszxh/macless-haystack-cn:latest
 ghcr.io/wg-easy/wg-easy:latest
+wcjiang/reference:latest
