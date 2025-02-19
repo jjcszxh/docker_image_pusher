@@ -37,7 +37,7 @@ jeessy/ddns-go:latest
 ghcr.io/esphome/esphome:latest 
 
 dadoum/anisette-v3-server:latest
-ghcr.io/jjcszxh/macless-haystack-cn:latest #自编译
+#ghcr.io/jjcszxh/macless-haystack-cn:latest #自编译
 christld/macless-haystack:latest
 
 ghcr.io/wg-easy/wg-easy:latest
