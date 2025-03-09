@@ -43,3 +43,4 @@ christld/macless-haystack:latest
 ghcr.io/wg-easy/wg-easy:latest
 wcjiang/reference:latest
 gdy666/lucky:latest
+vaultwarden/server:latest
