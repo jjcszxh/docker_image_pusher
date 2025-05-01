@@ -1,1 +1,1 @@
-ghcr.io/blakeblackshear/frigate:0.15.0-tensorrt
+ghcr.io/blakeblackshear/frigate:0.15.1-tensorrt
