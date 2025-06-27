@@ -44,3 +44,10 @@ christld/macless-haystack:latest
 wcjiang/reference:latest
 gdy666/lucky:latest
 vaultwarden/server:latest
+
+
+ghcr.io/11notes/kms-gui:1.0.2
+ghcr.io/11notes/kms:1.0.2
+ghcr.io/dani-garcia/vaultwarden:latest
+corentinth/it-tools:latest
+ghcr.io/sergi0g/cup:latest
