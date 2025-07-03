@@ -51,3 +51,4 @@ ghcr.io/11notes/kms:1.0.2
 ghcr.io/dani-garcia/vaultwarden:latest
 corentinth/it-tools:latest
 ghcr.io/sergi0g/cup:latest
+ghcr.io/t0bst4r/home-assistant-matter-hub:3.0.0-alpha.86
