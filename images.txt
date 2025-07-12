@@ -18,4 +18,4 @@ google/cadvisor:latest
 ghcr.io/jjcszxh/macless-haystack-cn:latest
 gdy666/lucky:latest
 #ghcr.io/mrtian2016/hass-panel:latest
-
+ghcr.io/zfb132/qcloud-ssl-cdn:main
