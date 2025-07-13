@@ -1,5 +1,7 @@
-ghcr.io/blakeblackshear/frigate:0.15.2-tensorrt
-ghcr.io/blakeblackshear/frigate:0.16.0-beta3-tensorrt
-ghcr.io/home-assistant-libs/python-matter-server:8
-ghcr.io/t0bst4r/home-assistant-matter-hub:3.0.0-alpha.87
+#ghcr.io/blakeblackshear/frigate:0.15.2-tensorrt
+#ghcr.io/blakeblackshear/frigate:0.16.0-beta3-tensorrt
+#ghcr.io/home-assistant-libs/python-matter-server:8
+#ghcr.io/t0bst4r/home-assistant-matter-hub:3.0.0-alpha.87
 
+ghcr.io/openlistteam/openlist-git:beta-aio
+openlistteam/openlist:latest-aio
