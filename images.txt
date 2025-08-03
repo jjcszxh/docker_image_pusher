@@ -1,7 +1,7 @@
-#ghcr.io/blakeblackshear/frigate:0.15.2-tensorrt
-#ghcr.io/blakeblackshear/frigate:0.16.0-beta4-tensorrt
-#ghcr.io/home-assistant-libs/python-matter-server:8.1.0b1
-#ghcr.io/t0bst4r/home-assistant-matter-hub:3.0.0-alpha.87
-#openlistteam/openlist:latest-aio
-#collinwebdesigns/fastapi-dls:latest
-portainer/portainer-ee:latest    
+ghcr.io/home-assistant-libs/python-matter-server:8.1.0b1
+ghcr.io/t0bst4r/home-assistant-matter-hub:3.0.0-alpha.87
+openlistteam/openlist:latest-aio
+collinwebdesigns/fastapi-dls:latest
+portainer/portainer-ee:latest
+ghcr.io/blakeblackshear/frigate:0.16.0-rc1-tensorrt
+ghcr.io/blakeblackshear/frigate:0.15.2-tensorrt
