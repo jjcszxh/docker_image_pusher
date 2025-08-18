@@ -35,7 +35,7 @@ jc21/nginx-proxy-manager:latest
 linuxserver/heimdall:latest
 jeessy/ddns-go:latest
 ghcr.io/esphome/esphome:latest 
-ghcr.io/esphome/esphome:latest-dev
+@ghcr.io/esphome/esphome:latest-dev
 dadoum/anisette-v3-server:latest
 #ghcr.io/jjcszxh/macless-haystack-cn:latest #自编译
 christld/macless-haystack:latest
