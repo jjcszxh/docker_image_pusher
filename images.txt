@@ -3,10 +3,6 @@
 #openlistteam/openlist:latest-aio
 #collinwebdesigns/fastapi-dls:latest
 #portainer/portainer-ee:latest
-#ghcr.io/blakeblackshear/frigate:0.16.0-rc4-tensorrt
-#ghcr.io/blakeblackshear/frigate:0.15.2-tensorrt
-
-
+ghcr.io/blakeblackshear/frigate:0.16.0-tensorrt
 #ghcr.io/dingyufei615/ai-goofish:latest
-
 ghcr.io/linuxserver/chromium:latest
