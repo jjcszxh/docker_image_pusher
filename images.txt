@@ -6,3 +6,5 @@
 ghcr.io/blakeblackshear/frigate:0.16.0-tensorrt
 #ghcr.io/dingyufei615/ai-goofish:latest
 ghcr.io/linuxserver/chromium:latest
+
+szabis/iventoy:latest
