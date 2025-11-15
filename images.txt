@@ -1,3 +1,1 @@
-collinwebdesigns/fastapi-dls:latest
-portainer/portainer-ee:latest
-ghcr.io/linuxserver/chromium:latest
+
