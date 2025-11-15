@@ -1,3 +1,4 @@
+certimate/certimate:latest
 ghcr.io/home-assistant/home-assistant:latest
 ghcr.io/home-assistant/home-assistant:stable
 ghcr.io/home-assistant/qemuarm-64-homeassistant:latest
