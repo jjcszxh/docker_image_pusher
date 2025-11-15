@@ -49,3 +49,7 @@ corentinth/it-tools:latest
 ghcr.io/sergi0g/cup:latest
 ghcr.io/t0bst4r/home-assistant-matter-hub:3.0.0-alpha.86
 ghcr.io/openlistteam/openlist-git:latest
+
+collinwebdesigns/fastapi-dls:latest
+portainer/portainer-ee:latest
+ghcr.io/linuxserver/chromium:latest
