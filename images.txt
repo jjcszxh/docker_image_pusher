@@ -1,3 +1,4 @@
+agrrh/udpxy:latest
 certimate/certimate:latest
 ghcr.io/home-assistant/home-assistant:latest
 ghcr.io/home-assistant/home-assistant:stable
