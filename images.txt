@@ -1,3 +1,4 @@
+emqx/emqx-enterprise:latest
 agrrh/udpxy:latest
 certimate/certimate:latest
 ghcr.io/home-assistant/home-assistant:latest
