@@ -1,3 +1,4 @@
+ghcr.io/blakeblackshear/frigate:0.16.2-tensorrt
 emqx/emqx-enterprise:latest
 agrrh/udpxy:latest
 certimate/certimate:latest
