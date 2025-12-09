@@ -1,3 +1,4 @@
+648540858/wvp_pro:latest
 realswaggymacro/fanx:latest
 ghcr.io/blakeblackshear/frigate:0.16.3-tensorrt
 emqx/emqx-enterprise:latest
