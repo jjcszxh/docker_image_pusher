@@ -1,3 +1,4 @@
+ghcr.io/stackia/rtp2httpd:latest
 ghcr.io/blakeblackshear/frigate:stable-tensorrt
 docker.io/library/python:3.11
 ghcr.io/astral-sh/uv:0.8.0
