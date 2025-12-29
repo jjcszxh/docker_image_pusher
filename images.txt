@@ -1,3 +1,6 @@
+11notes/kms:1.0.3
+11notes/kms-gui:1.0.3
+containrrr/watchtower:latest
 ghcr.io/stackia/rtp2httpd:latest
 ghcr.io/blakeblackshear/frigate:stable-tensorrt
 docker.io/library/python:3.11
