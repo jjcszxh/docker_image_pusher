@@ -1,3 +1,4 @@
+ghcr.io/librespeed/speedtest:latest
 majosissi/easytier-web:latest
 11notes/kms:1.0.3
 11notes/kms-gui:1.0.3
